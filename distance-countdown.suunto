@@ -1,0 +1,19 @@
+/* While in sport mode do this once per second */
+if (SUUNTO_LAP_NUMBER > lap) {
+  goal = goal + 1;
+  lap = SUUNTO_LAP_NUMBER; 
+}
+if (goal <= 0 || stop <= 0) {
+  left = goal - SUUNTO_DISTANCE; 
+  if (left <= 0) {
+    RESULT = 0;
+    stop = 1;
+    Suunto.alarmBeep();
+    Suunto.light();
+  } else {
+    RESULT = left;
+    
+  }
+} else {
+  RESULT = 0;
+}
