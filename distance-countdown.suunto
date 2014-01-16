@@ -1,7 +1,11 @@
 /* While in sport mode do this once per second */
 if (SUUNTO_LAP_NUMBER > lap) {
+  if (goal < SUUNTO_DISTANCE) {
+    goal = SUUNTO_DISTANCE;
+  }
   goal = goal + 1;
-  lap = SUUNTO_LAP_NUMBER; 
+  lap = SUUNTO_LAP_NUMBER;
+  stop = 0;
 }
 if (goal <= 0 || stop <= 0) {
   left = goal - SUUNTO_DISTANCE; 
@@ -12,8 +16,11 @@ if (goal <= 0 || stop <= 0) {
     Suunto.light();
   } else {
     RESULT = left;
-    
+    prefix = "left";
+  postfix = "km";
   }
 } else {
   RESULT = 0;
+  prefix = "done";
+  postfix = "";
 }
