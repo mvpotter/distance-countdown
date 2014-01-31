@@ -8,3 +8,12 @@ Set goal distance and run!
 You'll hear the beep and see the backlight when reach it.
 The default goal is 1 kilometer. You can add distance by tapping on LAP button (1km each tap).
 ```
+
+Default values are:
+
+```description
+left = 0
+goal = 1
+lap = 1
+stop = 1
+```
